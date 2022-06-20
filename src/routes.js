@@ -11,7 +11,7 @@ const routes = new Router()
 routes.post('/sessions', SessionController.create)
 routes.get('/', HelloController.index)
 
-//routes.use(auth)
+routes.use(auth)
 
 
 
