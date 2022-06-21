@@ -1,4 +1,4 @@
-# Projeto em Back End em NodeJs com banco de dados MongooseDb
+# Projeto em Back End em NodeJs com banco de dados MongoDB
 💻 Projeto
 Desafio deste projeto que se resume em uma aplicação de uma webagenda, onde o usuario tem como a finalidade inserir dados como:
 ```
