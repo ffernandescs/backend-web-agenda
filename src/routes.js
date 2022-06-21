@@ -22,7 +22,7 @@ routes.delete('/users/:id', UsersController.destroy)
 
 routes.get('/users/:user_id/contatos', ContatoController.index) 
 routes.post('/users/:user_id/contatos', ContatoController.create)
-routes.put('/users/:user_id/contatos', ContatoController.destroy)
-routes.put('/users/:user_id/contatos/:id', ContatoController.destroy)
+routes.put('/users/:user_id/contatos/:id', ContatoController.update)
+routes.delete('/users/:user_id/contatos/:id', ContatoController.destroy)
 
 export default routes

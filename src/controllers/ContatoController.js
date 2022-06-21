@@ -85,8 +85,25 @@ class RepositoryController {
         return res.status(500).json({ error: 'Internal Server error.'})
 
       }
+    }
 
+    async update(req, res) {
+     
+     try {
+      const { id } = req.params
+      const { name, email, sobrenome, dateNasc, logradouro, fone } = req.body
 
+      const user = await Contato.findById(id)
+
+      if(!user) {
+        return res.status(404).json()
+      }
+      await user.update({ name, email, sobrenome, dateNasc, logradouro, fone })
+      return res.status(200).json()
+    } catch (error) {
+      console.error(error)
+      return res.status(500).json({ error: 'Internal Server error.'})
+    } 
 
     }
 
