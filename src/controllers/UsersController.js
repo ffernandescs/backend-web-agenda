@@ -10,7 +10,7 @@ class UsersController {
         return res.json(users)
 
       } catch (error) {
-        console.error(err)
+        console.error(error)
         return res.status(500).json({ error: 'Internal Server error.'})
       }
       
@@ -27,7 +27,7 @@ class UsersController {
 
         return res.json(user)
       } catch (error) {
-        console.error(err)
+        console.error(error)
         return res.status(500).json({ error: 'Internal Server error.'})
       }
     }
@@ -52,8 +52,8 @@ class UsersController {
         });
 
         return res.status(201).json(newUser)
-      } catch (err) {
-        console.error(err)
+      } catch (error) {
+        console.error(error)
         return res.status(500).json({ error: 'Internal Server error.'})
       }
     }
@@ -73,7 +73,7 @@ class UsersController {
         await user.updateOne({ email, password: encryptedPasword })
         return res.status(200).json()
       } catch (error) {
-        console.error(err)
+        console.error(error)
         return res.status(500).json({ error: 'Internal Server error.'})
       }  
     }
@@ -90,7 +90,7 @@ class UsersController {
         await user.deleteOne()
         return res.status(200).json()
       } catch (error) {
-        console.error(err)
+        console.error(error)
         return res.status(500).json({ error: 'Internal Server error.'})
       }
     }

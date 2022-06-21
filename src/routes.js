@@ -13,9 +13,6 @@ routes.get('/', HelloController.index)
 
 routes.use(auth)
 
-
-
-
 routes.get('/users', UsersController.index)
 routes.get('/users/:id', UsersController.show)
 routes.post('/users/', UsersController.create)

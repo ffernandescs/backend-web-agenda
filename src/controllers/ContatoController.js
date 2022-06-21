@@ -4,15 +4,23 @@ import User from '../models/User';
 class RepositoryController {
     async index(req, res) {
       try {
-        const { user_id } = req.params
+        const { user_id} = req.params
         const user = await User.findById(user_id);
-
+        const { q } = req.query
         if(!user) {
           return res.status(404).json()
         }
+
+        let query = {}
+
+        if(q) {
+          query = { url: {$regex: q} }
+        }
+
         
         const contatos = await Contato.find({
-          userId: user_id
+          userId: user_id,
+          ...query
         })
         return res.json(contatos)
 
