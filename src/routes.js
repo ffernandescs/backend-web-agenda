@@ -9,6 +9,7 @@ import ContatoController from "./controllers/ContatoController";
 const routes = new Router()
 
 routes.post('/sessions', SessionController.create)
+routes.get('/', HelloController.index)
 
 routes.use(auth)
 

@@ -1,6 +1,6 @@
 class HelloController {
     async index(rec, res) {
-      return  res.json('Ola muddndo')
+      return  res.json('Not Find')
     }
 }
 
